@@ -272,7 +272,7 @@ const LUXURY_PRODUCTS = [
   },
   {
     id: "jw-02",
-    name: "Émeraude Royale Drop Pendant Necklace",
+    name: "Jade Bracelet",
     category: "jewelry",
     categoryLabel: "Fine Jewelry",
     price: 2450,
@@ -281,23 +281,23 @@ const LUXURY_PRODUCTS = [
     reviewsCount: 24,
     badge: "One-of-a-Kind",
     isBestseller: false,
-    image: "assets/images/jw-02-emerald-necklace.jpg",
-    secondaryImage: "assets/images/jw-02-emerald-necklace-alt.jpg",
+    image: "assets/images/j1.png",
+    secondaryImage: "assets/images/j2.png",
     gallery: [
-      "assets/images/jw-02-emerald-necklace.jpg",
-      "assets/images/jw-02-emerald-necklace-alt.jpg",
-      "assets/images/jw-01-diamond-ring.jpg"
+      "assets/images/j1.png",
+      "assets/images/j2.png",
+      "assets/images/j3.png"
     ],
-    shortDescription: "A hypnotic Colombian pear-cut emerald framed by brilliant tapered diamond baguettes on an 18K gold wheat chain.",
-    description: "A testament to enduring grace. The vivid green emerald radiates pure chromatic vibrancy, crowned by brilliant diamond accents that catch light from every angle.",
+    shortDescription: "Thaya S925 Silver Women Bracelets Elegant Chalcedony Pendant Bracelets Fashion Female Jade Bracelet Birthday Party Jewelry Gifts.",
+    description: "High-Quality Craftsmanship with Certification Certified with CNAS, this piece meets strict quality standards. Advanced Electroplating; Polishing technology enhances shine and resistance to tarnish.......CNAS සහතිකය සහිත උසස් තත්ත්වයේ අත්කම් නිර්මාණශීලීත්වය, මෙම කොටස දැඩි තත්ත්ව ප්‍රමිතීන් සපුරාලයි. උසස් විද්‍යුත් ආලේපනය; ඔප දැමීමේ තාක්ෂණය දීප්තිය සහ කැළැල් ඇතිවීමට ප්‍රතිරෝධය වැඩි කරයි.",
     details: [
-      "1.85 ct Certified Natural Colombian Emerald",
-      "0.45 ct Baguette and Round Brilliant Cut Diamonds",
-      "18K Solid Yellow Gold 18-inch adjustable wheat chain",
-      "Custom safety lobster clasp with É&S hallmark seal"
+      "Elegant 925 Sterling Silver Design Crafted from 100% s925 sterling silver, this bracelet features a refined 925, Sterling metal stamp, ensuring high-quality craftsmanship and lasting durability for everyday elegance.",
+      "Chalcedony Pendant with Romantic Style",
+      "Perfect for Special Occasions Ideal for Party, Wedding, Engagement, Anniversary",
+      "Lightweight and Comfortable Fit Weighing only 4.45g"
     ],
-    craftsmanship: "Individually certified and assembled in Geneva, Switzerland.",
-    stockStatus: "Only 2 specimens in private stock"
+    craftsmanship: "Made In :China.",
+    stockStatus: "Available"
   },
   {
     id: "jw-03",
