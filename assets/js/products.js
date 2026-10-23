@@ -298,7 +298,8 @@ const LUXURY_PRODUCTS = [
     ],
     craftsmanship: "Made In :China.",
     stockStatus: "Available"
-  },  {
+  }, 
+  {
     id: "jw-04",
     name: "",
     category: "jewelry",
