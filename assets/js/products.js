@@ -301,31 +301,31 @@ const LUXURY_PRODUCTS = [
   }, 
   {
     id: "jw-03",
-    name: "Vendôme Baroque Pearl & Gold Cuff",
+    name: "",
     category: "jewelry",
     categoryLabel: "Fine Jewelry",
-    price: 1350,
-    originalPrice: null,
+    price: 1000,
+    originalPrice: 3050,
     rating: 4.8,
     reviewsCount: 31,
     badge: "Artisanal",
     isBestseller: false,
-    image: "assets/images/jw-03-pearl-cuff.jpg",
-    secondaryImage: "assets/images/jw-03-pearl-cuff-alt.jpg",
+    image: "assets/images/nec1.png",
+    secondaryImage: "assets/images/nec2.png",
     gallery: [
-      "assets/images/jw-03-pearl-cuff.jpg",
-      "assets/images/jw-03-pearl-cuff-alt.jpg",
-      "assets/images/jw-01-diamond-ring.jpg"
+      "assets/images/nec2.png",
+      "assets/images/nec3.png",
+      "assets/images/nec4.png"
     ],
-    shortDescription: "Hammered 18k gold vermeil sculpted cuff featuring two lustrous organic Australian South Sea baroque pearls.",
-    description: "Each baroque pearl is completely unique, grown in the warm waters of the Southern Ocean, nestled into molten-textured golden embrace.",
+    shortDescription: "Light Luxury Gold Plated Turtle Crystal Pendant Necklace Clavicle Chain For Women Wedding Birthday Anniversary Party Gift",
+    description: "Elegant light luxury design for women This gold plated turtle crystal pendant necklace features a sophisticated light luxury style, perfect for weddings, birthdays, or anniversary celebrations. Its delicate design adds a touch of class to any outfit[කාන්තාවන් සඳහා වූ අලංකාර සහ සුඛෝපභෝගී මෝස්තරයකින් යුත් මෙම රන් ආලේපිත, කැස්බෑවාගේ හැඩය ගත් ස්ඵටික (crystal) පෙන්ඩනය සහිත මාලය, විවාහ මංගල්‍ය, උපන්දින හෝ සංවත්සර සැමරුම් වැනි අවස්ථාවන් සඳහා ඉතා යෝග්‍ය වේ. මෙහි සියුම් මෝස්තරය ඔබ අඳින ඕනෑම ඇඳුමකට සුවිශේෂී අලංකාරයක් සහ පෞරුෂයක් එක් කරයි.]",
     details: [
-      "Sustainably harvested 12-13mm South Sea Baroque Pearls",
-      "Heavy 18K Gold Vermeil over 925 Sterling Silver base",
-      "Flexible ergonomic opening to gently fit any wrist",
-      "Signature brushed satin finish"
+      "High-quality copper metal with gold plating Crafted from copper metal with a durable A009-J gold plating",
+      "Sparkling zircon crystal accent The pendant is set with a brilliant zircon setting material",
+      "Perfect clavicle chain for everyday wear Designed as a clavicle chain",
+      "Unisex fashion pendant for versatile gifting As a unisex fashion pendant"
     ],
-    craftsmanship: "Hand-forged by our silversmiths using ancestral lost-wax casting.",
+    craftsmanship: "Origin: Mainland China, manufactured in Guangxi Produced in Guangxi, Mainland China.",
     stockStatus: "In Stock"
   },
 
