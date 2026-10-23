@@ -328,6 +328,36 @@ const LUXURY_PRODUCTS = [
     craftsmanship: "Hand-forged by our silversmiths using ancestral lost-wax casting.",
     stockStatus: "In Stock"
   },
+   {
+    id: "jw-04",
+    name: "",
+    category: "jewelry",
+    categoryLabel: "Fine Jewelry",
+    price: 1150,
+    originalPrice: 2999,
+    rating: 4.8,
+    reviewsCount: 31,
+    badge: "Artisanal",
+    isBestseller: false,
+    image: "assets/images/nec1.png",
+    secondaryImage: "assets/images/nec2.png",
+    gallery: [
+      "assets/images/nec1.png",
+      "assets/images/nec2.png",
+      "assets/images/nec3.png"
+      "assets/images/nec4.png"
+    ],
+    shortDescription: "Light Luxury Gold Plated Turtle Crystal Pendant Necklace Clavicle Chain For Women Wedding Birthday Anniversary Party Gift.",
+    description: "Elegant light luxury design for women This gold plated turtle crystal pendant necklace features a sophisticated light luxury style, perfect for weddings, birthdays, or anniversary celebrations. Its delicate design adds a touch of class to any outfit. කාන්තාවන් සඳහා වූ අලංකාර සහ සුඛෝපභෝගී මෝස්තරයකින් යුත් මෙම රන් ආලේපිත, කැස්බෑවාගේ හැඩය ගත් ස්ඵටික (crystal) පෙන්ඩනය සහිත මාලය, විවාහ මංගල්‍ය, උපන්දින හෝ සංවත්සර සැමරුම් වැනි අවස්ථාවන් සඳහා ඉතා යෝග්‍ය වේ. මෙහි සියුම් මෝස්තරය ඔබ අඳින ඕනෑම ඇඳුමකට සුවිශේෂී අලංකාරයක් සහ පෞරුෂයක් එක් කරයි.",
+    details: [
+      "High-quality copper metal with gold plating Crafted from copper metal with a durable A009-J gold plating",
+      "Sparkling zircon crystal accent The pendant is set with a brilliant zircon setting material",
+      "Perfect clavicle chain for everyday wear Designed as a clavicle chain",
+      "Unisex fashion pendant for versatile gifting As a unisex fashion pendant"
+    ],
+    craftsmanship: " Manufactured in Guangxi Produced in Guangxi, Mainland China.",
+    stockStatus: "In Stock"
+  },
 
   // CATEGORY: HAUTE COUTURE & FASHION
   {
