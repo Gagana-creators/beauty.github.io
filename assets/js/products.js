@@ -95,7 +95,7 @@ const LUXURY_PRODUCTS = [
   },
     {
   id: "bs-04",
-  name: "POPFEEL 18 Colors Eyeshadow Palette",
+  name: "Makeup Mixing Palette",
   category: "beauty-sets",
   categoryLabel: "Beauty Sets",
   price: 1850,
@@ -104,20 +104,20 @@ const LUXURY_PRODUCTS = [
   reviewsCount: 89,
   badge: "Best Seller",
   isBestseller: true,
-  image: "assets/images/eyeshadow1.jpg",
-  secondaryImage: "assets/images/eyeshadow2.jpg",
+  image: "assets/images/g1.png",
+  secondaryImage: "assets/images/g2.png",
   gallery: [
-    "assets/images/eyeshadow1.jpg",
-    "assets/images/eyeshadow2.jpg",
-    "assets/images/eyeshadow3.jpg"
+    "assets/images/g1.jpg",
+    "assets/images/g2.jpg",
+    "assets/images/g3.jpg"
   ],
-  shortDescription: "18 highly pigmented eyeshadows in matte and shimmer finishes.",
-  description: "POPFEEL 18 Colors Eyeshadow Palette with soft, blendable formula. Perfect for everyday and party looks.",
+  shortDescription: "Makeup Mixing Palette Foundation Lipstick Eye Shadow Stainless Steel Mixer Palette with Spatula Mixing Stick Beauty Tools Nail-A.",
+  description: "Stainless Steel Makeup Mixing Palette Set This 2-piece set features a durable stainless steel mixing palette with a spatula stick, ideal for blending foundation, lipstick, and eye shadow with precision and hygiene.මල නොබැඳෙන වානේ වේශ නිරූපණ මිශ්‍ර පැලට් කට්ටලය මෙම කොටස් 2 කින් යුත් කට්ටලයේ කල් පවතින මල නොබැඳෙන වානේ මිශ්‍ර පැලට් එකක් ස්පාටුල පොල්ලකින් සමන්විත වන අතර එය අත්තිවාරම, ලිප්ස්ටික් සහ අයි ෂැඩෝ නිරවද්‍යතාවයෙන් සහ සනීපාරක්ෂාවෙන් මිශ්‍ර කිරීමට වඩාත් සුදුසුය.",
   details: [
-    "18 beautiful shades",
-    "Matte + Shimmer finishes",
-    "Long-lasting and easy to blend",
-    "Suitable for all skin tones"
+    "Professional-Grade Beauty Tool Kit Designed for makeup artists and enthusiasts",
+    "Hygienic and Long-Lasting Material Made from stainless steel",
+    "safe surface for cosmetic mixing with no harmful high-concerned chemical content",
+    "Brand: Define Beauty Crafted by Define Beauty"
   ],
   craftsmanship: "Made in China",
   stockStatus: "In Stock"
