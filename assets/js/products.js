@@ -130,7 +130,7 @@ const LUXURY_PRODUCTS = [
   price: 3000,
   originalPrice: 6275,
   rating: 4.7,
-  reviewsCount: 156,
+  reviewsCount: 157,
   badge: "Hot",
   isBestseller: true,
   image: "assets/images/brush1.png",
