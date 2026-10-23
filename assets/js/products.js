@@ -276,7 +276,7 @@ const LUXURY_PRODUCTS = [
     category: "jewelry",
     categoryLabel: "Fine Jewelry",
     price: 8050,
-    originalPrice: 12994,
+    originalPrice: 12985,
     rating: 5.0,
     reviewsCount: 24,
     badge: "One-of-a-Kind",
