@@ -819,6 +819,7 @@ function handleVipFormSubmit(e) {
   if (DOM.vipForm) DOM.vipForm.reset();
 }
 
+
 // ==========================================================================
 // Checkout Flow Simulation
 // ==========================================================================
@@ -830,56 +831,46 @@ window.openCheckout = function() {
 
   closeCart();
 
-  if (DOM.checkoutModal) {
-    document.body.style.overflow = "hidden";
-    const subtotal = calculateCartSubtotal();
-    if (DOM.checkoutSubtotal) DOM.checkoutSubtotal.textContent = formatPrice(subtotal);
-    if (DOM.checkoutTotal) DOM.checkoutTotal.textContent = formatPrice(subtotal);
-
-    if (DOM.checkoutItemsList) {
-      DOM.checkoutItemsList.innerHTML = state.cart.map(item => `
-        <div class="flex items-center justify-between py-2 border-b border-white/5 text-xs">
-          <div class="flex items-center gap-2">
-            <img src="${item.image}" alt="${item.name}" class="w-10 h-12 object-cover rounded-sm border border-gold/20" />
-            <div>
-              <p class="text-alabaster font-serif">${item.name}</p>
-              <span class="text-muted text-[10px]">Qty: ${item.quantity}</span>
-            </div>
-          </div>
-          <span class="text-gold font-serif">${formatPrice(item.price * item.quantity)}</span>
-        </div>
-      `).join("");
-    }
-    DOM.checkoutModal.classList.add("active");
-  } else {
-    // Seamless Direct Acquisition Confirmation
-    const orderRef = "ES-" + Math.floor(100000 + Math.random() * 900000);
-    state.cart = [];
-    persistCart();
-    updateCartUI();
-    showToast(`Acquisition Authorized! Reference #${orderRef}. Our Private Concierge will coordinate courier dispatch.`, "fas fa-crown");
-  }
-};
-
-window.closeCheckout = function() {
-  document.body.style.overflow = "";
-  if (DOM.checkoutModal) {
-    DOM.checkoutModal.classList.remove("active");
-  }
-};
-
-window.confirmOrder = function(e) {
-  e.preventDefault();
-  closeCheckout();
+  // Build elegant WhatsApp message
+  let message = "✦ ÉLIXIR & SOIE | PRIVATE ACQUISITION ✦%0A%0A";
+  message += "Hello,%0A";
+  message += "I would like to place a private order with your Maison. Please find my order details below.%0A%0A";
   
-  const orderRef = "ES-" + Math.floor(100000 + Math.random() * 900000);
+  message += "────────────────────%0A";
+  message += "✦ ORDER SUMMARY%0A%0A";
+
+  state.cart.forEach((item) => {
+    message += `• ${item.name} × ${item.quantity} — ${formatPrice(item.price * item.quantity)}%0A`;
+  });
+
+  const subtotal = calculateCartSubtotal();
+  message += `%0A✦ Subtotal: ${formatPrice(subtotal)}%0A`;
+  message += "Please confirm the item's availability and delivery fee.%0A%0A";
+
+  message += "────────────────────%0A";
+  message += "✦ CUSTOMER DETAILS%0A";
+  message += "• Name: %0A";
+  message += "• Phone: %0A";
+  message += "• Delivery Address: %0A%0A";
+
+  message += "✦ PAYMENT METHOD: %0A%0A";
+
+  message += "────────────────────%0A";
+  message += "Thank you! Looking forward to your confirmation.%0A%0A";
+  message += "✦ ÉLIXIR & SOIE — Haute Beauté & Joaillerie";
+
+  // Open WhatsApp
+  const whatsappNumber = "94714796023";
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
   
-  // Clear cart
+  window.open(whatsappURL, "_blank");
+
+  // Clear cart after opening
   state.cart = [];
   persistCart();
   updateCartUI();
 
-  showToast(`Order Confirmed! Reference: #${orderRef}. A private courier tracking link has been sent to your email.`, "fas fa-check-double");
+  showToast("Opening WhatsApp for Private Acquisition...", "fab fa-whatsapp");
 };
 
 // ==========================================================================
