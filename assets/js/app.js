@@ -992,45 +992,38 @@ document.addEventListener("DOMContentLoaded", () => {
       const address = document.getElementById("customer-address").value.trim();
       const payment = document.getElementById("customer-payment").value;
 
-      // Build WhatsApp message
-      let message = "✦ ÉLIXIR & SOIE | PRIVATE ACQUISITION ✦%0A%0A";
-      message += "Hello,%0A";
-      message += "I would like to place a private order.%0A%0A";
+      if (!name || !phone || !address) {
+        alert("Please fill all required fields");
+        return;
+      }
 
-      message += "────────────────────%0A";
-      message += "✦ ORDER SUMMARY%0A%0A";
+      // Build message
+      let message = `*ÉLIXIR & SOIE - New Order*\n\n`;
+      message += `*Customer Details*\n`;
+      message += `Name: ${name}\n`;
+      message += `Phone: ${phone}\n`;
+      message += `Address: ${address}\n`;
+      message += `Payment: ${payment}\n\n`;
 
-      state.cart.forEach((item) => {
-        message += `• ${item.name} × ${item.quantity} — ${formatPrice(item.price * item.quantity)}%0A`;
+      message += `*Order Items*\n`;
+      state.cart.forEach(item => {
+        message += `• ${item.name} × ${item.quantity} = Rs ${item.price * item.quantity}\n`;
       });
 
-      const subtotal = calculateCartSubtotal();
-      message += `%0A✦ Subtotal: ${formatPrice(subtotal)}%0A%0A`;
-
-      message += "────────────────────%0A";
-      message += "✦ CUSTOMER DETAILS%0A";
-      message += `• Name: ${name}%0A`;
-      message += `• Phone: ${phone}%0A`;
-      message += `• Delivery Address: ${address}%0A%0A`;
-
-      message += `✦ PAYMENT METHOD: ${payment}%0A%0A`;
-
-      message += "────────────────────%0A";
-      message += "Thank you! Looking forward to your confirmation.%0A%0A";
-      message += "✦ ÉLIXIR & SOIE — Haute Beauté & Joaillerie";
+      const total = calculateCartSubtotal();
+      message += `\n*Total: Rs ${total}*\n\n`;
+      message += `Please confirm this order.`;
 
       // Open WhatsApp
-      const whatsappNumber = "94714796023";
-      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+      const whatsappURL = `https://wa.me/94714796023?text=${encodeURIComponent(message)}`;
       window.open(whatsappURL, "_blank");
 
-      // Clear cart & close modal
+      // Clear cart
       state.cart = [];
       persistCart();
       updateCartUI();
       closeCheckout();
-
-      showToast("Opening WhatsApp...", "fab fa-whatsapp");
+      showToast("Opening WhatsApp with your order...", "fab fa-whatsapp");
     });
   }
 });
