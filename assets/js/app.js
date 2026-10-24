@@ -831,46 +831,37 @@ window.openCheckout = function() {
 
   closeCart();
 
-  // Build elegant WhatsApp message
-  let message = "✦ ÉLIXIR & SOIE | PRIVATE ACQUISITION ✦%0A%0A";
-  message += "Hello,%0A";
-  message += "I would like to place a private order with your Maison. Please find my order details below.%0A%0A";
-  
-  message += "────────────────────%0A";
-  message += "✦ ORDER SUMMARY%0A%0A";
-
-  state.cart.forEach((item) => {
-    message += `• ${item.name} × ${item.quantity} — ${formatPrice(item.price * item.quantity)}%0A`;
-  });
-
+  // Fill order summary inside the modal
   const subtotal = calculateCartSubtotal();
-  message += `%0A✦ Subtotal: ${formatPrice(subtotal)}%0A`;
-  message += "Please confirm the item's availability and delivery fee.%0A%0A";
+  const itemsList = document.getElementById("checkout-items-list");
+  const totalEl = document.getElementById("checkout-total");
 
-  message += "────────────────────%0A";
-  message += "✦ CUSTOMER DETAILS%0A";
-  message += "• Name: %0A";
-  message += "• Phone: %0A";
-  message += "• Delivery Address: %0A%0A";
+  if (itemsList) {
+    itemsList.innerHTML = state.cart.map(item => `
+      <div class="flex justify-between items-start gap-3 py-1">
+        <div>
+          <p class="text-alabaster font-serif">${item.name}</p>
+          <p class="text-muted text-[10px]">Qty: ${item.quantity}</p>
+        </div>
+        <span class="text-gold font-serif whitespace-nowrap">${formatPrice(item.price * item.quantity)}</span>
+      </div>
+    `).join("");
+  }
 
-  message += "✦ PAYMENT METHOD: %0A%0A";
+  if (totalEl) {
+    totalEl.textContent = formatPrice(subtotal);
+  }
 
-  message += "────────────────────%0A";
-  message += "Thank you! Looking forward to your confirmation.%0A%0A";
-  message += "✦ ÉLIXIR & SOIE — Haute Beauté & Joaillerie";
+  // Show the modal
+  document.body.style.overflow = "hidden";
+  const modal = document.getElementById("checkout-modal");
+  if (modal) modal.classList.add("active");
+};
 
-  // Open WhatsApp
-  const whatsappNumber = "94714796023";
-  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
-  
-  window.open(whatsappURL, "_blank");
-
-  // Clear cart after opening
-  state.cart = [];
-  persistCart();
-  updateCartUI();
-
-  showToast("Opening WhatsApp for Private Acquisition...", "fab fa-whatsapp");
+window.closeCheckout = function() {
+  document.body.style.overflow = "";
+  const modal = document.getElementById("checkout-modal");
+  if (modal) modal.classList.remove("active");
 };
 
 // ==========================================================================
@@ -988,3 +979,58 @@ window.scrollToCatalog = function(category = null) {
     catalogSection.scrollIntoView({ behavior: "smooth" });
   }
 };
+
+// Handle Checkout Form Submit → Open WhatsApp
+document.addEventListener("DOMContentLoaded", () => {
+  const checkoutForm = document.getElementById("checkout-form");
+  if (checkoutForm) {
+    checkoutForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("customer-name").value.trim();
+      const phone = document.getElementById("customer-phone").value.trim();
+      const address = document.getElementById("customer-address").value.trim();
+      const payment = document.getElementById("customer-payment").value;
+
+      // Build WhatsApp message
+      let message = "✦ ÉLIXIR & SOIE | PRIVATE ACQUISITION ✦%0A%0A";
+      message += "Hello,%0A";
+      message += "I would like to place a private order.%0A%0A";
+
+      message += "────────────────────%0A";
+      message += "✦ ORDER SUMMARY%0A%0A";
+
+      state.cart.forEach((item) => {
+        message += `• ${item.name} × ${item.quantity} — ${formatPrice(item.price * item.quantity)}%0A`;
+      });
+
+      const subtotal = calculateCartSubtotal();
+      message += `%0A✦ Subtotal: ${formatPrice(subtotal)}%0A%0A`;
+
+      message += "────────────────────%0A";
+      message += "✦ CUSTOMER DETAILS%0A";
+      message += `• Name: ${name}%0A`;
+      message += `• Phone: ${phone}%0A`;
+      message += `• Delivery Address: ${address}%0A%0A`;
+
+      message += `✦ PAYMENT METHOD: ${payment}%0A%0A`;
+
+      message += "────────────────────%0A";
+      message += "Thank you! Looking forward to your confirmation.%0A%0A";
+      message += "✦ ÉLIXIR & SOIE — Haute Beauté & Joaillerie";
+
+      // Open WhatsApp
+      const whatsappNumber = "94714796023";
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+      window.open(whatsappURL, "_blank");
+
+      // Clear cart & close modal
+      state.cart = [];
+      persistCart();
+      updateCartUI();
+      closeCheckout();
+
+      showToast("Opening WhatsApp...", "fab fa-whatsapp");
+    });
+  }
+});
