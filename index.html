@@ -874,5 +874,70 @@
   <!-- Product Catalog & Controller Scripts -->
   <script src="assets/js/products.js"></script>
   <script src="assets/js/app.js"></script>
+
+  <!-- ========================================================================
+     CHECKOUT / CUSTOMER DETAILS MODAL
+     ======================================================================== -->
+<div id="checkout-modal" class="modal-backdrop fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+  <div class="absolute inset-0" onclick="closeCheckout()"></div>
+
+  <div class="modal-content-box relative w-full max-w-lg bg-[#111116] border border-gold/40 rounded-sm shadow-2xl z-10 p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
+    <button type="button" onclick="closeCheckout()" class="absolute top-4 right-4 text-mutedCustom hover:text-gold text-xl transition-colors">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <div class="text-center mb-6">
+      <i class="fas fa-lock text-gold text-2xl mb-2"></i>
+      <h3 class="font-serif text-2xl text-alabaster">Private Acquisition</h3>
+      <p class="text-xs text-mutedCustom font-light mt-1">
+        Please provide your details to complete the order
+      </p>
+    </div>
+
+    <!-- Order Summary -->
+    <div id="checkout-items-list" class="mb-6 space-y-2 text-xs border border-gold/20 rounded-sm p-4 bg-[#0A0A0E]">
+      <!-- Items will be injected here -->
+    </div>
+
+    <div class="flex justify-between text-sm mb-6">
+      <span class="text-mutedCustom">Total</span>
+      <span id="checkout-total" class="font-serif text-gold text-xl">Rs 0</span>
+    </div>
+
+    <!-- Customer Form -->
+    <form id="checkout-form" class="space-y-4 text-xs">
+      <div>
+        <label class="block text-gold uppercase tracking-wider mb-1 font-semibold">Full Name *</label>
+        <input type="text" id="customer-name" required placeholder="Your full name" 
+               class="w-full bg-[#181820] border border-gold/25 rounded-sm p-3 text-alabaster focus:outline-none focus:border-gold" />
+      </div>
+
+      <div>
+        <label class="block text-gold uppercase tracking-wider mb-1 font-semibold">Phone Number *</label>
+        <input type="tel" id="customer-phone" required placeholder="07X XXX XXXX" 
+               class="w-full bg-[#181820] border border-gold/25 rounded-sm p-3 text-alabaster focus:outline-none focus:border-gold" />
+      </div>
+
+      <div>
+        <label class="block text-gold uppercase tracking-wider mb-1 font-semibold">Delivery Address *</label>
+        <textarea id="customer-address" required rows="3" placeholder="House No, Street, City, District"
+                  class="w-full bg-[#181820] border border-gold/25 rounded-sm p-3 text-alabaster focus:outline-none focus:border-gold"></textarea>
+      </div>
+
+      <div>
+        <label class="block text-gold uppercase tracking-wider mb-1 font-semibold">Payment Method</label>
+        <select id="customer-payment" class="w-full bg-[#181820] border border-gold/25 rounded-sm p-3 text-alabaster focus:outline-none focus:border-gold">
+          <option value="Cash on Delivery">Cash on Delivery</option>
+          <option value="Bank Transfer">Bank Transfer</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn-gold w-full py-3.5 text-xs font-semibold mt-2">
+        <i class="fab fa-whatsapp"></i> Send Order via WhatsApp
+      </button>
+    </form>
+  </div>
+</div>
 </body>
 </html>
