@@ -997,22 +997,32 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Build message
-      let message = `*ÉLIXIR & SOIE - New Order*\n\n`;
-      message += `*Customer Details*\n`;
-      message += `Name: ${name}\n`;
-      message += `Phone: ${phone}\n`;
-      message += `Address: ${address}\n`;
-      message += `Payment: ${payment}\n\n`;
+      // Build beautiful message
+      let message = `✦ *ÉLIXIR & SOIE* ✦
+*Private Order Received*
 
-      message += `*Order Items*\n`;
+────────────────────
+*CUSTOMER DETAILS*
+• Name: ${name}
+• Phone: ${phone}
+• Address: ${address}
+• Payment: ${payment}
+
+────────────────────
+*ORDER ITEMS*\n`;
+
       state.cart.forEach(item => {
-        message += `• ${item.name} × ${item.quantity} = Rs ${item.price * item.quantity}\n`;
+        message += `• ${item.name}
+  Qty: ${item.quantity}  |  Rs ${item.price * item.quantity}\n`;
       });
 
       const total = calculateCartSubtotal();
-      message += `\n*Total: Rs ${total}*\n\n`;
-      message += `Please confirm this order.`;
+      message += `
+────────────────────
+*TOTAL AMOUNT: Rs ${total}*
+
+Thank you for choosing ÉLIXIR & SOIE.
+We will confirm your order shortly.`;
 
       // Open WhatsApp
       const whatsappURL = `https://wa.me/94714796023?text=${encodeURIComponent(message)}`;
